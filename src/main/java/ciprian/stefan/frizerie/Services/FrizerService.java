@@ -20,7 +20,15 @@ public class FrizerService {
         return frizerRepository.findAllByName(name);
     }
 
-    public List<Frizer> getFrizeri(){
+    public List<Frizer> getFrizeri() {
         return frizerRepository.findAll();
+    }
+
+    public void saveFrizer() {
+        Frizer frizer = new Frizer();
+        frizer.setId(1L);
+        frizer.setName("Elena");
+        frizer.setScaun(4);
+        frizerRepository.save(frizer);
     }
 }
