@@ -3,17 +3,24 @@ package ciprian.stefan.frizerie.Services;
 import ciprian.stefan.frizerie.JPA.FrizerRepository;
 import ciprian.stefan.frizerie.entitiesDB.Frizer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class FrizerService {
-    @Autowired
     FrizerRepository frizerRepository;
 
-    public List<Frizer> getFrizeri(String name)
-    {
-        return  frizerRepository.findAllByName(name);
+    @Autowired
+    public FrizerService(FrizerRepository frizerRepository) {
+        this.frizerRepository = frizerRepository;
+    }
+
+    public List<Frizer> getFrizeri(String name) {
+        return frizerRepository.findAllByName(name);
+    }
+
+    public List<Frizer> getFrizeri(){
+        return frizerRepository.findAll();
     }
 }
