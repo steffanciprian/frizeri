@@ -1,14 +1,13 @@
-package JPA.Repositories;
+package ciprian.stefan.frizerie.JPA;
 
-import entities.Frizer;
+import ciprian.stefan.frizerie.entitiesDB.Frizer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface FrizerRepo extends JpaRepository<Frizer,Long> {
-
+public interface FrizerRepository extends JpaRepository<Frizer,Long> {
     List<Frizer> findAllByName(String name);
 
 }

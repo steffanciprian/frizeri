@@ -1,23 +1,17 @@
-package entities;
+package ciprian.stefan.frizerie.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
+import org.springframework.stereotype.Component;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "Client")
-public class Client {
+@Component
 
-    @Id
-    @GeneratedValue
+public class FrizerDTO {
     private Long id;
-
-    @Column
     private String name;
-
+    private Integer scaun;
 }

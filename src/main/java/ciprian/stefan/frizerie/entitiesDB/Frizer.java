@@ -1,23 +1,26 @@
-package entities;
+package ciprian.stefan.frizerie.entitiesDB;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Entity
 @Table(name = "Frizer")
 public class Frizer {
     @Id
     @GeneratedValue
+    @Column
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private String name;
 
-    @Column(nullable = false)
+    @Column
     private Integer scaun;
 
 }
