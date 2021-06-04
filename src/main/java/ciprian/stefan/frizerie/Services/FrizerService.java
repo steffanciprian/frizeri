@@ -16,19 +16,16 @@ public class FrizerService {
         this.frizerRepository = frizerRepository;
     }
 
-    public List<Frizer> getFrizeri(String name) {
-        return frizerRepository.findAllByName(name);
-    }
-
     public List<Frizer> getFrizeri() {
         return frizerRepository.findAll();
     }
 
-    public void saveFrizer() {
-        Frizer frizer = new Frizer();
-        frizer.setId(1L);
-        frizer.setName("Elena");
-        frizer.setScaun(4);
+    public void saveFrizer(String name, int scaun) {
+        Frizer frizer =
+                Frizer.builder()
+                        .name(name)
+                        .scaun(scaun)
+                        .build();
         frizerRepository.save(frizer);
     }
 }
