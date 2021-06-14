@@ -18,7 +18,7 @@ public class FrizerController {
         this.frizerService = frizerService;
     }
 
-    @GetMapping(path = "/frizeri")
+    @GetMapping(path = "/programare/stylist")
     public List<Frizer> getFrizeri() {
         return frizerService.getFrizeri();
     }
