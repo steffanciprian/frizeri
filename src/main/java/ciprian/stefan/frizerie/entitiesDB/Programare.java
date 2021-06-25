@@ -12,4 +12,13 @@ public class Programare {
 
     @Column
     private LocalDate dataProgramare;
+
+    @ManyToOne
+    @Column
+    private Frizer frizer;
+
+    @ManyToOne
+    @Column
+    private Serviciu serviciu;
+
 }
