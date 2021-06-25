@@ -25,4 +25,8 @@ public class Frizer {
     @Column
     private Integer scaun;
 
+    @OneToOne
+    @Column
+    private Calendar calendar;
+
 }
