@@ -14,11 +14,11 @@ public class Programare {
     private LocalDate dataProgramare;
 
     @ManyToOne
-    @Column
+    @JoinColumn
     private Frizer frizer;
 
     @ManyToOne
-    @Column
+    @JoinColumn
     private Serviciu serviciu;
 
 }

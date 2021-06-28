@@ -1,18 +1,17 @@
 package ciprian.stefan.frizerie.entitiesDB;
 
 import javax.persistence.*;
-import java.time.LocalTime;
 
 @Entity
-@Table(name = "OraRezervata", schema = "frizerie")
+@Table(name = "orarezervata", schema = "frizerie")
 public class OraRezervata {
     @Id
     @GeneratedValue
     private Long id;
 
-    @Column
-    private LocalTime ora;
+    @JoinColumn
+    private String ora;
 
-    @Column
+    @JoinColumn
     private Boolean booked;
 }

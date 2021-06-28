@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Builder
@@ -25,8 +26,8 @@ public class Frizer {
     @Column
     private Integer scaun;
 
-    @OneToOne
-    @Column
-    private Calendar calendar;
+    @OneToMany
+    @JoinColumn(name = "id")
+    private List<OraRezervata> oraRezervata;
 
 }
