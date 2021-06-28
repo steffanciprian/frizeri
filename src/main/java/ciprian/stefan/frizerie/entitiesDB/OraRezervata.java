@@ -7,11 +7,15 @@ import javax.persistence.*;
 public class OraRezervata {
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Long id;
 
-    @JoinColumn
+    @Column
     private String ora;
 
-    @JoinColumn
+    @Column
     private Boolean booked;
+
+    @Column
+    private Long frizerId;
 }
