@@ -1,5 +1,7 @@
 package ciprian.stefan.frizerie.entitiesDB;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -10,15 +12,21 @@ public class Programare {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @DateTimeFormat
     @Column
-    private LocalDate dataProgramare;
+    private LocalDate dataInceput;
+
+    @DateTimeFormat
+    @Column
+    private LocalDate dataSfarsit;
 
     @ManyToOne
-    @JoinColumn
-    private Frizer frizer;
+    @JoinColumn(name = "id_frizer")
+    private Frizer frizerId;
 
     @ManyToOne
-    @JoinColumn
-    private Serviciu serviciu;
+    @JoinColumn(name = "id_serviciu")
+    private Serviciu serviciuId;
+
 
 }

@@ -26,8 +26,8 @@ public class Frizer {
     @Column
     private Integer scaun;
 
-    @OneToMany
-    @JoinColumn(name = "id")
-    private List<OraRezervata> oraRezervata;
+    @ManyToOne
+    @JoinColumn(name = "id_programare")
+    private Programare idProgramare;
 
 }
